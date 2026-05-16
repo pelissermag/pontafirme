@@ -1,0 +1,202 @@
+.photos-page {
+  padding-bottom: 100px;
+}
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding-top: 40px;
+}
+
+.evento-card {
+  background-color: var(--dark-gray);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 1px solid #222;
+}
+
+.evento-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-red);
+}
+
+.evento-cover {
+  height: 200px;
+  position: relative;
+  background-color: #1a1a1a;
+}
+
+.evento-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-count {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.evento-info {
+  padding: 15px;
+}
+
+.evento-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.evento-date {
+  font-size: 14px;
+  color: #666;
+}
+
+.back-btn {
+  background: none;
+  border: 1px solid #333;
+  color: #999;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  border-color: var(--primary-red);
+  color: white;
+}
+
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  padding-top: 40px;
+}
+
+.photo-card {
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Lightbox Refined - Below Navbar */
+.lightbox-overlay {
+  position: fixed !important;
+  top: var(--navbar-height) !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: calc(100vh - var(--navbar-height)) !important;
+  background-color: rgba(0,0,0,0.98) !important;
+  z-index: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px !important;
+}
+
+.lightbox-content {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+.lightbox-content img {
+  max-width: 100% !important;
+  max-height: 75vh !important;
+  width: auto !important;
+  height: auto !important;
+  box-shadow: 0 0 50px rgba(0,0,0,1) !important;
+  border-radius: 4px !important;
+}
+
+.close-lightbox {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  background-color: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  color: white !important;
+  font-size: 20px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 600 !important;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background-color: rgba(0,0,0,0.5) !important;
+  color: white !important;
+  width: 50px !important;
+  height: 80px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 30px !important;
+  cursor: pointer !important;
+  border: none !important;
+  transition: background 0.3s !important;
+  z-index: 550 !important;
+}
+
+.nav-btn:hover {
+  background-color: var(--primary-red) !important;
+}
+
+.nav-btn.prev { left: 0 !important; border-radius: 0 8px 8px 0 !important; }
+.nav-btn.next { right: 0 !important; border-radius: 8px 0 0 8px !important; }
+
+@media (max-width: 1024px) {
+  .photos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+  
+  .lightbox-content img {
+    max-height: 65vh !important;
+  }
+  
+  .nav-btn {
+    width: 40px !important;
+    height: 60px !important;
+    font-size: 20px !important;
+  }
+}

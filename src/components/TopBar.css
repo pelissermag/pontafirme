@@ -1,0 +1,28 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 52px;
+  background-color: var(--pure-black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 1000;
+}
+
+.topbar-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.topbar-title {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.topbar-spacer {
+  width: 32px; /* To balance the logo */
+}
