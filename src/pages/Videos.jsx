@@ -32,10 +32,15 @@ const Videos = ({ isMobile }) => {
   useEffect(() => {
     if (playingVideo) {
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('media-open');
     } else {
       document.body.style.overflow = 'unset';
+      document.body.classList.remove('media-open');
     }
-    return () => { document.body.style.overflow = 'unset'; };
+    return () => { 
+      document.body.style.overflow = 'unset';
+      document.body.classList.remove('media-open');
+    };
   }, [playingVideo]);
 
   const fetchEventos = async () => {

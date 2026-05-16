@@ -118,3 +118,19 @@ button {
     --navbar-height: 52px;
   }
 }
+
+/* Fix for Mobile Media Overlays Stacking Context */
+body.media-open .app-container {
+  z-index: 9999;
+}
+
+body.media-open .content {
+  z-index: 9999;
+  padding-top: 0; /* Help with centering on some browsers */
+}
+
+/* Extra safety for very high overlays */
+.lightbox-overlay, .video-player-overlay {
+  height: 100vh !important;
+  height: 100dvh !important; /* Dynamic viewport height for mobile browsers */
+}

@@ -32,10 +32,15 @@ const Photos = ({ isMobile }) => {
   useEffect(() => {
     if (selectedPhotoIndex !== null) {
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('media-open');
     } else {
       document.body.style.overflow = 'unset';
+      document.body.classList.remove('media-open');
     }
-    return () => { document.body.style.overflow = 'unset'; };
+    return () => { 
+      document.body.style.overflow = 'unset';
+      document.body.classList.remove('media-open');
+    };
   }, [selectedPhotoIndex]);
 
   const fetchEventos = async () => {
