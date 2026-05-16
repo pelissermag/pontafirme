@@ -92,21 +92,22 @@
   opacity: 1;
 }
 
-/* Modal Player Refined - Starts BELOW Navbar */
+/* Modal Player Refined - Full Screen Overlay */
 .video-player-overlay {
   position: fixed !important;
-  top: var(--navbar-height) !important; /* Começa logo abaixo do menu */
+  top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
   width: 100% !important;
-  height: calc(100vh - var(--navbar-height)) !important;
+  height: 100vh !important;
   background-color: rgba(0,0,0,0.98) !important;
-  z-index: 500 !important; /* Menor que o menu (1000) */
+  z-index: 2000 !important; /* Above Navbar (1000) and BottomNav (1000) */
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 40px !important;
+  padding: 20px !important;
+  backdrop-filter: blur(10px);
 }
 
 .player-container {
@@ -155,13 +156,13 @@
 
 @media (max-width: 1024px) {
   .video-player-overlay {
-    top: var(--navbar-height) !important;
-    height: calc(100vh - var(--navbar-height)) !important;
-    padding: 20px !important;
+    top: 0 !important;
+    height: 100vh !important;
+    padding: 10px !important;
   }
   
   .player-container {
-    padding-top: 50px !important;
+    padding-top: 60px !important;
   }
   
   .player-container video {
