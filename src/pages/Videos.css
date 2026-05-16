@@ -162,7 +162,9 @@
   }
   
   .player-container {
-    padding-top: 60px !important;
+    padding-top: 0 !important; /* Remover o padding que empurrava pra baixo */
+    align-items: flex-start !important; /* Alinhar no topo */
+    padding-top: 40px !important; /* Espaço apenas para o botão X */
   }
   
   .player-container video {
